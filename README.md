@@ -1,1 +1,4 @@
- # aprendendo JavaScript
+ # Aprendendo JavaScript
+
+Começando JavaScrit
+
