@@ -25,13 +25,13 @@ var o1 = Object.create({x:1, y:2}); // o1 herda as propriedades x e y
 // criando um novo objeto que herda um protótipo
 
 function herdar(p){
-  if(p == null) throw TypeError();
-  if(Object.create)
-    return Object.create(p);
-  var t = typeof p;
+  if(p == null) throw TypeError(); // O objeto não pode ser null
+  if(Object.create) // Se Object.create() está definida...
+    return Object.create(p); // então basta usa-lá.
+  var t = typeof p; // Caso contrário, faz mais algumas verificação
 
   if (t !== "object" && t !== "function") throw TypeError();
-  function f() {};
-  f.prototype = p;
-  return new f();
+  function f() {}; // define uma função construtora ficticia
+  f.prototype = p; // Configura sua propriedade prototype como p.
+  return new f(); // Usa f() para criar um "herdeiro" de p.
 }
